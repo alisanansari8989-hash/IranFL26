@@ -1,0 +1,14 @@
+name: Keep Site Alive
+
+on:
+  schedule:
+    - cron: '*/14 * * * *'
+  workflow_dispatch:
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Site
+        run: |
+          curl -s --max-time 30 https://iranfl26.onrender.com > /dev/null
