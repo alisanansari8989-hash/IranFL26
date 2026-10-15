@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>کیت‌ها | IranFL26</title>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='icons/favicon.png') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<header class="header">
+    <div class="container header-inner">
+        <a href="/" class="logo"><img src="{{ url_for('static', filename='icons/site-logo.png') }}" class="logo-img"><span class="logo-text">IranFL26</span></a>
+        <div class="header-actions">
+            <button id="themeToggle" class="theme-btn"><img src="{{ url_for('static', filename='icons/sun.png') }}" class="icon-sun"><img src="{{ url_for('static', filename='icons/moon.png') }}" class="icon-moon"></button>
+            <button id="menuToggle" class="menu-btn"><span></span><span></span><span></span></button>
+        </div>
+    </div>
+</header>
+<nav class="mobile-menu" id="mobileMenu">
+    <a href="/">خانه</a><a href="/iranian">کیت ایرانی</a><a href="/foreign">کیت خارجی</a><a href="/videos">گیم‌پلی</a><a href="/about">درباره من</a><a href="/guide">راهنما</a><a href="/request">درخواست کیت</a><a href="/support">پیام به پشتیبانی</a>
+    <a href="https://rubika.ir/YOUR_CHANNEL" target="_blank" class="rubika-link">عضویت در کانال روبیکا</a>
+</nav>
+<main class="container">
+    <h1 class="section-title">همه کیت‌ها</h1>
+    <p class="section-subtitle">کیت‌های ایرانی و خارجی</p>
+    <div class="kits-grid">
+        {% if not kits %}<p>هنوز کیتی آپلود نشده است.</p>
+        {% else %}{% for kit in kits %}
+            <div class="kit-card">
+                <img src="/uploads/images/{{ kit.image }}" alt="{{ kit.name }}" class="kit-img">
+                <h3>{{ kit.name }}</h3>
+                <p>{{ kit.team }}</p>
+                <a href="/kit/{{ kit.id }}" class="neon-btn blue small-btn"><img src="{{ url_for('static', filename='icons/kit.png') }}" class="btn-icon"> مشاهده کیت</a>
+            </div>
+        {% endfor %}{% endif %}
+    </div>
+</main>
+<footer class="footer">
+    <div class="container footer-inner">
+        <div><h3>IranFL26</h3><p>مرجع کیت‌های رایگان بازی FL26</p></div>
+        <div><h4>لینک‌ها</h4><a href="/about">درباره</a><a href="/guide">راهنما</a></div>
+    </div>
+    <div class="footer-bottom">© ۲۰۲۶ IranFL26</div>
+    <div class="admin-hidden-link"><a href="/admin" title="">•</a></div>
+</footer>
+<nav class="bottom-nav">
+    <a href="/kits" class="bottom-nav-item active" data-color="blue"><img src="{{ url_for('static', filename='icons/kit.png') }}"><span>کیت</span></a>
+    <a href="/logos" class="bottom-nav-item" data-color="green"><img src="{{ url_for('static', filename='icons/logo.png') }}"><span>آرم</span></a>
+    <a href="/faces" class="bottom-nav-item" data-color="pink"><img src="{{ url_for('static', filename='icons/face.png') }}"><span>فیس</span></a>
+    <a href="/leagues" class="bottom-nav-item" data-color="purple"><img src="{{ url_for('static', filename='icons/league.png') }}"><span>لیگ</span></a>
+    <a href="/packages" class="bottom-nav-item" data-color="pink"><img src="{{ url_for('static', filename='icons/package.png') }}"><span>پکیج</span></a>
+    <a href="/downloads" class="bottom-nav-item" data-color="yellow"><img src="{{ url_for('static', filename='icons/download.png') }}"><span>دانلود</span></a>
+</nav>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+                                                                       </html>
