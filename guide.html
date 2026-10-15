@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>راهنما | IranFL26</title>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='icons/favicon.png') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<header class="header">
+    <div class="container header-inner">
+        <a href="/" class="logo"><img src="{{ url_for('static', filename='icons/site-logo.png') }}" class="logo-img"><span class="logo-text">IranFL26</span></a>
+        <div class="header-actions">
+            <button id="themeToggle" class="theme-btn"><img src="{{ url_for('static', filename='icons/sun.png') }}" class="icon-sun"><img src="{{ url_for('static', filename='icons/moon.png') }}" class="icon-moon"></button>
+            <button id="menuToggle" class="menu-btn"><span></span><span></span><span></span></button>
+        </div>
+    </div>
+</header>
+<nav class="mobile-menu" id="mobileMenu">
+    <a href="/">خانه</a><a href="/iranian">کیت ایرانی</a><a href="/foreign">کیت خارجی</a><a href="/videos">گیم‌پلی</a><a href="/about">درباره من</a><a href="/guide" class="active">راهنما</a><a href="/request">درخواست کیت</a><a href="/support">پیام به پشتیبانی</a>
+    <a href="https://rubika.ir/YOUR_CHANNEL" target="_blank" class="rubika-link">عضویت در کانال روبیکا</a>
+</nav>
+<main class="container admin-page">
+    <div class="admin-box about-box">
+        <h1 class="admin-title">راهنمای سایت</h1>
+        <p class="admin-subtitle">هر چیزی که برای استفاده از IranFL26 لازم داری</p>
+        <div class="about-content">
+            <h3>۱. چطور کیت دانلود کنم؟</h3>
+            <p>از منوی پایینی روی «کیت» بزن، بعد روی کیت مورد نظر کلیک کن و دکمه «دانلود» رو انتخاب کن.</p>
+            <h3>۲. چرا تبلیغ میاد؟</h3>
+            <p>سایت رایگانه و هزینه‌هاش از تبلیغات تأمین می‌شه.</p>
+            <h3>۳. فایل متنی (txt) چیه؟</h3>
+            <p>بعضی کیت‌ها یه فایل متنی دارن که توش لینک تصاویر هست.</p>
+            <h3>۴. تم سایت رو چطور عوض کنم؟</h3>
+            <p>روی آیکون خورشید/ماه تو هدر بزن.</p>
+            <h3>۵. چطور کیت درخواست بدم؟</h3>
+            <p>از منوی کشویی «درخواست کیت» رو انتخاب کن.</p>
+        </div>
+        <a href="https://rubika.ir/YOUR_CHANNEL" target="_blank" class="about-rubika">عضویت در کانال روبیکا</a>
+    </div>
+</main>
+<nav class="bottom-nav">
+    <a href="/kits" class="bottom-nav-item" data-color="blue"><img src="{{ url_for('static', filename='icons/kit.png') }}"><span>کیت</span></a>
+    <a href="/logos" class="bottom-nav-item" data-color="green"><img src="{{ url_for('static', filename='icons/logo.png') }}"><span>آرم</span></a>
+    <a href="/faces" class="bottom-nav-item" data-color="pink"><img src="{{ url_for('static', filename='icons/face.png') }}"><span>فیس</span></a>
+    <a href="/leagues" class="bottom-nav-item" data-color="purple"><img src="{{ url_for('static', filename='icons/league.png') }}"><span>لیگ</span></a>
+    <a href="/packages" class="bottom-nav-item" data-color="pink"><img src="{{ url_for('static', filename='icons/package.png') }}"><span>پکیج</span></a>
+    <a href="/downloads" class="bottom-nav-item" data-color="yellow"><img src="{{ url_for('static', filename='icons/download.png') }}"><span>دانلود</span></a>
+</nav>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
