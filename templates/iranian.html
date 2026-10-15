@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ kit.name }} | IranFL26</title>
+    <meta property="og:title" content="{{ kit.name }} - IranFL26">
+    <meta property="og:description" content="دانلود کیت {{ kit.team }}">
+    <meta property="og:image" content="/uploads/images/{{ kit.image }}">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='icons/favicon.png') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<header class="header">
+    <div class="container header-inner">
+        <a href="/" class="logo"><img src="{{ url_for('static', filename='icons/site-logo.png') }}" class="logo-img"><span class="logo-text">IranFL26</span></a>
+        <div class="header-actions">
+            <button id="themeToggle" class="theme-btn"><img src="{{ url_for('static', filename='icons/sun.png') }}" class="icon-sun"><img src="{{ url_for('static', filename='icons/moon.png') }}" class="icon-moon"></button>
+            <button id="menuToggle" class="menu-btn"><span></span><span></span><span></span></button>
+        </div>
+    </div>
+</header>
+<nav class="mobile-menu" id="mobileMenu">
+    <a href="/">خانه</a><a href="/iranian">کیت ایرانی</a><a href="/foreign">کیت خارجی</a><a href="/videos">گیم‌پلی</a><a href="/about">درباره من</a><a href="/guide">راهنما</a><a href="/request">درخواست کیت</a><a href="/support">پیام به پشتیبانی</a>
+    <a href="https://rubika.ir/YOUR_CHANNEL" target="_blank" class="rubika-link">عضویت در کانال روبیکا</a>
+</nav>
+<main class="container download-page">
+    <div class="download-box">
+        <img src="/uploads/images/{{ kit.image }}" alt="{{ kit.name }}" class="kit-preview">
+        <h1 class="download-title">{{ kit.name }}</h1>
+        <p class="download-subtitle">{{ kit.team }}</p>
+        <div class="download-options">
+            {% if kit.txt_file %}
+                <a href="https://linkvertise.com/YOUR_TXT_LINK" target="_blank" class="neon-btn yellow big-btn"><img src="{{ url_for('static', filename='icons/download.png') }}" class="btn-icon"> دانلود فایل متنی</a>
+            {% endif %}
+        </div>
+        <p class="download-note">پس از کلیک، به صفحه تبلیغ هدایت می‌شوید. پس از مشاهده، فایل دریافت می‌شود.</p>
+    </div>
+</main>
+<nav class="bottom-nav">
+    <a href="/kits" class="bottom-nav-item" data-color="blue"><img src="{{ url_for('static', filename='icons/kit.png') }}"><span>کیت</span></a>
+    <a href="/logos" class="bottom-nav-item" data-color="green"><img src="{{ url_for('static', filename='icons/logo.png') }}"><span>آرم</span></a>
+    <a href="/faces" class="bottom-nav-item" data-color="pink"><img src="{{ url_for('static', filename='icons/face.png') }}"><span>فیس</span></a>
+    <a href="/leagues" class="bottom-nav-item" data-color="purple"><img src="{{ url_for('static', filename='icons/league.png') }}"><span>لیگ</span></a>
+    <a href="/packages" class="bottom-nav-item" data-color="pink"><img src="{{ url_for('static', filename='icons/package.png') }}"><span>پکیج</span></a>
+    <a href="/downloads" class="bottom-nav-item" data-color="yellow"><img src="{{ url_for('static', filename='icons/download.png') }}"><span>دانلود</span></a>
+</nav>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
